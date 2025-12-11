@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>法定传染病学习手册</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法定传染病核心信息速查手册（完整版）</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Microsoft YaHei', sans-serif; }
+        body { background: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); padding: 30px; }
+        header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #2c80d6; padding-bottom: 20px; }
+        h1 { color: #2c80d6; font-size: 28px; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 16px; margin-bottom: 20px; }
+        .controls { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; padding: 15px; background: #f0f7ff; border-radius: 8px; }
+        .filter select, .search input, .btn { padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; }
+        .btn { background: #2c80d6; color: white; border: none; cursor: pointer; transition: background 0.3s; }
+        .btn:hover { background: #1a5fad; }
+        .toc { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #2c80d6; }
+        .toc h3 { margin-bottom: 10px; color: #2c80d6; }
+        .toc ul { list-style: none; column-count: 3; column-gap: 30px; }
+        .toc li { margin: 8px 0; break-inside: avoid; }
+        .toc a { color: #333; text-decoration: none; border-bottom: 1px dotted #999; }
+        .toc a:hover { color: #2c80d6; border-bottom-color: #2c80d6; }
+        .disease-section { margin-bottom: 40px; }
+        .section-title { background: #2c80d6; color: white; padding: 12px 20px; border-radius: 6px 6px 0 0; font-size: 20px; margin-bottom: 0; }
+        .disease-table { width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-size: 14px; }
+        .disease-table th, .disease-table td { border: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: top; }
+        .disease-table th { background: #e8f2ff; font-weight: bold; color: #1a5fad; }
+        .disease-table tr:nth-child(even) { background: #f9f9f9; }
+        .disease-table tr:hover { background: #f0f7ff; }
+        .warning-box { background: #fff8e1; border-left: 4px solid #ffc107; padding: 15px; margin: 25px 0; border-radius: 4px; font-size: 14px; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #888; font-size: 13px; }
+        .class-tag { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 12px; font-weight: bold; margin-right: 5px; }
+        .class-a { background: #f8d7da; color: #721c24; }
+        .class-b { background: #d1ecf1; color: #0c5460; }
+        .class-c { background: #d4edda; color: #155724; }
+        .stats { display: flex; justify-content: space-around; margin: 20px 0; padding: 15px; background: #e8f4ff; border-radius: 8px; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 24px; font-weight: bold; color: #2c80d6; }
+        .stat-label { font-size: 14px; color: #666; }
+        @media print {
+            .no-print, .controls, .btn { display: none !important; }
+            body { padding: 0; }
+            .container { box-shadow: none; }
+            .toc ul { column-count: 1; }
+        }
+        @media (max-width: 768px) {
+            .toc ul { column-count: 1; }
+            .disease-table { font-size: 12px; }
+            .disease-table th, .disease-table td { padding: 8px; }
+            .controls { flex-direction: column; }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>法定传染病核心信息速查手册（完整版）</h1>
+            <p class="subtitle">适用于传染病监测与防控工作参考 | 共40种法定传染病</p>
+            <p><strong>版本：</strong> 2024年 | <strong>依据：</strong> 《中华人民共和国传染病防治法》</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">2</div>
+                <div class="stat-label">甲类传染病</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">27</div>
+                <div class="stat-label">乙类传染病</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">11</div>
+                <div class="stat-label">丙类传染病</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">40</div>
+                <div class="stat-label">总计</div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <strong>重要说明：</strong> 本手册为传染病监测工作参考摘要，信息基于当前医学知识。实际工作中，请务必以国家卫健委发布的最新版《传染病诊断标准》、《防治指南》和《监测方案》为准。治疗方案需由临床医生根据患者具体情况制定。
+        </div>
+
+        <div class="controls no-print">
+            <div>
+                <label>按类别筛选：</label>
+                <select class="filter" onchange="filterDiseases(this.value)">
+                    <option value="all">全部传染病</option>
+                    <option value="甲类">甲类传染病</option>
+                    <option value="乙类">乙类传染病</option>
+                    <option value="丙类">丙类传染病</option>
+                </select>
+            </div>
+            <div>
+                <label>关键词搜索：</label>
+                <input type="text" class="search" placeholder="输入病名或病原体..." onkeyup="searchDiseases(this.value)">
+            </div>
+            <div>
+                <button class="btn" onclick="window.print()">打印页面</button>
+                <button class="btn" onclick="exportToPDF()">导出PDF</button>
+                <button class="btn" onclick="resetView()">重置视图</button>
+            </div>
+        </div>
+
+        <div class="toc">
+            <h3>法定传染病目录（点击快速跳转）</h3>
+            <ul>
+                <li><a href="#section-a">一、甲类传染病 (2种)</a></li>
+                <li><a href="#section-b">二、乙类传染病 (27种)</a></li>
+                <li><a href="#section-c">三、丙类传染病 (11种)</a></li>
+            </ul>
+        </div>
+
+        <!-- 甲类传染病部分 -->
+        <div class="disease-section" id="section-a">
+            <h2 class="section-title">一、甲类传染病 (2种) - 强制管理，2小时内报告</h2>
+            <table class="disease-table">
+                <thead>
+                    <tr>
+                        <th width="5%">序号</th>
+                        <th width="8%">类别</th>
+                        <th width="10%">名称</th>
+                        <th width="12%">病原体</th>
+                        <th width="15%">主要传染途径</th>
+                        <th width="25%">核心症状与特点</th>
+                        <th width="25%">特效药物/主要治疗手段</th>
+                    </tr>
+                </thead>
+                <tbody id="disease-a">
+                    <!-- 甲类传染病数据将通过JS填充 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 乙类传染病部分 -->
+        <div class="disease-section" id="section-b">
+            <h2 class="section-title">二、乙类传染病 (27种) - 严格管理，24小时内报告</h2>
+            <table class="disease-table">
+                <thead>
+                    <tr>
+                        <th width="5%">序号</th>
+                        <th width="8%">类别</th>
+                        <th width="10%">名称</th>
+                        <th width="12%">病原体</th>
+                        <th width="15%">主要传染途径</th>
+                        <th width="25%">核心症状与特点</th>
+                        <th width="25%">特效药物/主要治疗手段</th>
+                    </tr>
+                </thead>
+                <tbody id="disease-b">
+                    <!-- 乙类传染病数据将通过JS填充 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 丙类传染病部分 -->
+        <div class="disease-section" id="section-c">
+            <h2 class="section-title">三、丙类传染病 (11种) - 监测管理，24小时内报告</h2>
+            <table class="disease-table">
+                <thead>
+                    <tr>
+                        <th width="5%">序号</th>
+                        <th width="8%">类别</th>
+                        <th width="10%">名称</th>
+                        <th width="12%">病原体</th>
+                        <th width="15%">主要传染途径</th>
+                        <th width="25%">核心症状与特点</th>
+                        <th width="25%">特效药物/主要治疗手段</th>
+                    </tr>
+                </thead>
+                <tbody id="disease-c">
+                    <!-- 丙类传染病数据将通过JS填充 -->
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>本手册为传染病监测工作专业参考工具 | 生成时间：2024年 | 数据依据：国家法定传染病名录及诊疗指南</p>
+            <p><strong>注：实际工作中请务必参考最新官方指南和诊断标准，治疗方案需由执业医师确定</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        // 完整的法定传染病数据
+        const diseasesData = [
+            // 甲类传染病 (2种)
+            {
+                id: 1,
+                class: '甲类',
+                name: '鼠疫',
+                pathogen: '鼠疫耶尔森菌',
+                route: '鼠蚤叮咬、接触染疫动物/患者、呼吸道飞沫',
+                symptoms: '起病急骤，全身中毒症状极重。分型：腺鼠疫（淋巴结肿痛坏死）、肺鼠疫（咳嗽、血痰、呼吸困难）、败血型鼠疫（休克、广泛出血）',
+                treatment: '早期足量抗生素：首选链霉素、庆大霉素；替代：多西环素、环丙沙星、氯霉素'
+            },
+            {
+                id: 2,
+                class: '甲类',
+                name: '霍乱',
+                pathogen: 'O1群或O139群霍乱弧菌',
+                route: '粪-口途径（污染的水源、食物）',
+                symptoms: '无痛性剧烈腹泻、米泔水样便，伴呕吐。迅速导致脱水、电解质紊乱、循环衰竭',
+                treatment: '快速足量补液（口服/静脉）；抗生素辅助：多西环素、阿奇霉素、环丙沙星'
+            },
+
+            // 乙类传染病 (27种)
+            {
+                id: 3,
+                class: '乙类',
+                name: '传染性非典型肺炎 (SARS)',
+                pathogen: 'SARS冠状病毒',
+                route: '近距离飞沫、接触呼吸道分泌物',
+                symptoms: '发热、干咳、呼吸困难，进展为急性呼吸窘迫综合征。胸部影像示肺部浸润影',
+                treatment: '综合支持治疗为主；试用利巴韦林；重症可用糖皮质激素'
+            },
+            {
+                id: 4,
+                class: '乙类',
+                name: '艾滋病',
+                pathogen: '人类免疫缺陷病毒 (HIV)',
+                route: '性接触、血液及血制品、母婴垂直传播',
+                symptoms: '急性期似流感，长期无症状期，最终发生机会性感染（肺孢子菌肺炎、结核）和恶性肿瘤',
+                treatment: '高效抗逆转录病毒治疗：多种药物联合方案（核苷类、非核苷类、蛋白酶抑制剂、整合酶抑制剂）'
+            },
+            {
+                id: 5,
+                class: '乙类',
+                name: '病毒性肝炎',
+                pathogen: '各型肝炎病毒（甲、乙、丙、丁、戊型）',
+                route: '甲/戊型：粪-口；乙/丙/丁型：血液、性、母婴',
+                symptoms: '乏力、厌油、黄疸、肝区不适。乙/丙型易慢性化致肝硬化、肝癌；甲/戊型多为急性自限性',
+                treatment: '甲/戊型：支持治疗；乙型：抗病毒（恩替卡韦、替诺福韦、干扰素）；丙型：直接抗病毒药物（索磷布韦/维帕他韦等）'
+            },
+            {
+                id: 6,
+                class: '乙类',
+                name: '脊髓灰质炎',
+                pathogen: '脊髓灰质炎病毒',
+                route: '粪-口途径为主，呼吸道亦可',
+                symptoms: '多数无症状。少数发热、肢体疼痛。极少数（<1%）出现弛缓性瘫痪（小儿麻痹症）',
+                treatment: '无特效抗病毒药。支持对症治疗，重点是预防（疫苗）'
+            },
+            {
+                id: 7,
+                class: '乙类',
+                name: '人感染高致病性禽流感',
+                pathogen: '禽流感病毒（H5N1、H7N9等）',
+                route: '接触染疫禽类或其环境，有限人际传播',
+                symptoms: '高热、咳嗽，迅速进展为重症肺炎、急性呼吸窘迫综合征、多器官衰竭',
+                treatment: '早期应用神经氨酸酶抑制剂：奥司他韦、帕拉米韦、扎那米韦'
+            },
+            {
+                id: 8,
+                class: '乙类',
+                name: '麻疹',
+                pathogen: '麻疹病毒',
+                route: '飞沫传播，传染性极强',
+                symptoms: '高热、上感症状、科氏斑（口腔黏膜斑）。红色斑丘疹（耳后-面部-躯干-四肢顺序）',
+                treatment: '无特效抗病毒药。支持对症治疗，防治并发症。预防（麻腮风疫苗）'
+            },
+            {
+                id: 9,
+                class: '乙类',
+                name: '流行性出血热',
+                pathogen: '汉坦病毒',
+                route: '接触带毒鼠类排泄物形成的气溶胶或污染破损皮肤',
+                symptoms: '三大主症：发热、出血、肾损害。典型病程五期：发热期、低血压休克期、少尿期、多尿期、恢复期',
+                treatment: '综合对症治疗，"三早一就"。利巴韦林早期使用可能有效'
+            },
+            {
+                id: 10,
+                class: '乙类',
+                name: '狂犬病',
+                pathogen: '狂犬病病毒',
+                route: '被感染动物咬伤、抓伤，或舔舐黏膜、破损皮肤',
+                symptoms: '恐水、怕风、咽肌痉挛、进行性瘫痪。一旦出现症状，病死率近100%',
+                treatment: '暴露后预防：彻底冲洗伤口、接种疫苗和/或使用被动免疫制剂（狂犬病免疫球蛋白）'
+            },
+            {
+                id: 11,
+                class: '乙类',
+                name: '流行性乙型脑炎',
+                pathogen: '乙型脑炎病毒',
+                route: '蚊媒传播（三带喙库蚊）',
+                symptoms: '高热、意识障碍、抽搐、病理反射阳性、脑膜刺激征。重症可留后遗症',
+                treatment: '无特效抗病毒药。对症支持治疗，重点处理高热、抽搐和呼吸衰竭'
+            },
+            {
+                id: 12,
+                class: '乙类',
+                name: '登革热',
+                pathogen: '登革病毒',
+                route: '蚊媒传播（伊蚊）',
+                symptoms: '高热、剧烈头痛、肌肉关节痛（"断骨热"）、皮疹、白细胞减少。重症登革可致血浆渗漏、出血、休克',
+                treatment: '无特效抗病毒药。对症支持，密切监测重症迹象。忌用阿司匹林、布洛芬等'
+            },
+            {
+                id: 13,
+                class: '乙类',
+                name: '炭疽',
+                pathogen: '炭疽芽孢杆菌',
+                route: '皮肤炭疽：接触染疫动物及制品；肺炭疽：吸入含芽孢尘埃；肠炭疽：食入未煮熟病畜肉',
+                symptoms: '皮肤炭疽（焦痂、无痛性溃疡）；肺炭疽（出血性肺炎、纵隔淋巴结肿大）；肠炭疽（急性出血性肠炎）',
+                treatment: '首选青霉素G。替代：多西环素、环丙沙星。重症可用抗炭疽血清'
+            },
+            {
+                id: 14,
+                class: '乙类',
+                name: '细菌性和阿米巴性痢疾',
+                pathogen: '细菌性：志贺菌；阿米巴性：溶组织内阿米巴',
+                route: '粪-口途径',
+                symptoms: '细菌性：发热、腹痛、里急后重、粘液脓血便；阿米巴性：果酱样便，易转为慢性或肝脓肿',
+                treatment: '细菌性：喹诺酮类（环丙沙星）、头孢菌素等；阿米巴性：甲硝唑、替硝唑'
+            },
+            {
+                id: 15,
+                class: '乙类',
+                name: '肺结核',
+                pathogen: '结核分枝杆菌',
+                route: '空气飞沫传播',
+                symptoms: '慢性咳嗽、咳痰≥2周，或痰中带血、咯血。伴低热、盗汗、乏力、消瘦',
+                treatment: '标准化抗结核化疗：异烟肼、利福平、吡嗪酰胺、乙胺丁醇。强调"早期、联合、适量、规律、全程"'
+            },
+            {
+                id: 16,
+                class: '乙类',
+                name: '伤寒和副伤寒',
+                pathogen: '伤寒/副伤寒沙门菌',
+                route: '粪-口途径',
+                symptoms: '持续性高热、相对缓脉、玫瑰疹、肝脾肿大、表情淡漠（伤寒面容）。可并发肠出血、肠穿孔',
+                treatment: '特效抗生素：第三代头孢菌素（头孢曲松）、喹诺酮类（环丙沙星，注意耐药）、阿奇霉素'
+            },
+            {
+                id: 17,
+                class: '乙类',
+                name: '流行性脑脊髓膜炎',
+                pathogen: '脑膜炎奈瑟菌',
+                route: '飞沫传播',
+                symptoms: '突发高热、剧烈头痛、频繁呕吐、皮肤黏膜瘀点瘀斑、脑膜刺激征。暴发型进展迅猛',
+                treatment: '特效抗生素：青霉素G、第三代头孢菌素（头孢曲松/头孢噻肟）。休克型需抗休克治疗'
+            },
+            {
+                id: 18,
+                class: '乙类',
+                name: '百日咳',
+                pathogen: '百日咳鲍特菌',
+                route: '飞沫传播',
+                symptoms: '卡他期似感冒；痉咳期：阵发性痉挛性咳嗽，伴鸡鸣样回声，可致呕吐、面部浮肿；恢复期',
+                treatment: '早期应用抗生素（红霉素、阿奇霉素）减轻症状、缩短排菌期。痉咳期以对症支持为主'
+            },
+            {
+                id: 19,
+                class: '乙类',
+                name: '白喉',
+                pathogen: '白喉棒状杆菌',
+                route: '飞沫、接触',
+                symptoms: '发热、咽痛。特征性灰白色伪膜附着于咽、扁桃体，紧贴黏膜，强行剥离易出血。毒素可致心肌炎、神经麻痹',
+                treatment: '特效治疗：白喉抗毒素（尽早、足量）。抗生素（青霉素/红霉素）杀灭细菌'
+            },
+            {
+                id: 20,
+                class: '乙类',
+                name: '新生儿破伤风',
+                pathogen: '破伤风梭菌',
+                route: '脐带残端被含有破伤风梭菌芽孢的污染物污染',
+                symptoms: '牙关紧闭、苦笑面容、角弓反张，轻微刺激可诱发强直性痉挛',
+                treatment: '综合治疗：破伤风抗毒素/人破伤风免疫球蛋白、清创、镇静解痉（地西泮）、抗感染、支持治疗'
+            },
+            {
+                id: 21,
+                class: '乙类',
+                name: '猩红热',
+                pathogen: 'A组β溶血性链球菌',
+                route: '飞沫传播',
+                symptoms: '发热、咽峡炎、全身弥漫性鲜红色皮疹（粟粒疹）、疹退后片状脱皮、"草莓舌"、"杨梅舌"',
+                treatment: '特效抗生素：青霉素为首选。过敏者可用红霉素、阿奇霉素等'
+            },
+            {
+                id: 22,
+                class: '乙类',
+                name: '布鲁氏菌病',
+                pathogen: '布鲁氏菌',
+                route: '接触病畜及其分泌物、食用未经消毒的奶/肉制品',
+                symptoms: '长期不规则发热、多汗（"波状热"）、关节痛（大关节为主）、肝脾及淋巴结肿大。易转为慢性',
+                treatment: '联合抗生素长程治疗：多西环素联合利福平，或链霉素/庆大霉素'
+            },
+            {
+                id: 23,
+                class: '乙类',
+                name: '淋病',
+                pathogen: '淋病奈瑟菌',
+                route: '性接触、母婴传播',
+                symptoms: '男性：急性尿道炎（尿痛、流脓）；女性：多无症状或宫颈炎、盆腔炎；新生儿眼炎',
+                treatment: '首选抗生素：头孢曲松。大观霉素为替代选择。需性伴同治，注意耐药性'
+            },
+            {
+                id: 24,
+                class: '乙类',
+                name: '梅毒',
+                pathogen: '梅毒螺旋体',
+                route: '性接触、母婴、血液',
+                symptoms: '一期：硬下疳；二期：全身性皮疹、扁平湿疣；三期：心脏、神经、骨骼、皮肤树胶样肿等严重损害',
+                treatment: '特效药物：青霉素（苄星青霉素、普鲁卡因青霉素）是各期首选。多西环素等用于青霉素过敏者'
+            },
+            {
+                id: 25,
+                class: '乙类',
+                name: '钩端螺旋体病',
+                pathogen: '致病性钩端螺旋体',
+                route: '接触含病原体的疫水或土壤，经皮肤黏膜侵入',
+                symptoms: '早期：高热、全身酸痛（腓肠肌剧痛）、眼结膜充血、淋巴结肿大；中期：肺出血、黄疸出血、肾衰竭等；后期：后发症',
+                treatment: '特效抗生素：早期使用青霉素有良效。注意"赫氏反应"。替代药物：多西环素、庆大霉素'
+            },
+            {
+                id: 26,
+                class: '乙类',
+                name: '血吸虫病',
+                pathogen: '日本血吸虫',
+                route: '接触含尾蚴的疫水，经皮肤感染',
+                symptoms: '急性期：发热、荨麻疹、腹痛腹泻、肝脾肿大；慢性期：慢性腹泻、肝脾肿大；晚期：肝硬化、门脉高压、巨脾、腹水',
+                treatment: '特效驱虫药：吡喹酮。需根据病情分期和个体情况调整治疗方案'
+            },
+            {
+                id: 27,
+                class: '乙类',
+                name: '疟疾',
+                pathogen: '疟原虫（间日疟、恶性疟等）',
+                route: '蚊媒传播（按蚊），偶有输血传播',
+                symptoms: '周期性、规律性发作的寒战、高热、大汗。间日疟隔日发作；恶性疟热型不规则，可致凶险发作',
+                treatment: '特效抗疟药：氯喹（对敏感株）、青蒿素类（蒿甲醚、青蒿琥酯等）、伯氨喹（用于根治间日疟）'
+            },
+            {
+                id: 28,
+                class: '乙类',
+                name: '新型冠状病毒感染',
+                pathogen: 'SARS-CoV-2病毒',
+                route: '呼吸道飞沫、气溶胶、接触',
+                symptoms: '发热、干咳、乏力为主，部分有味嗅觉丧失。重症表现为肺炎、呼吸衰竭。可有多系统损害',
+                treatment: '抗病毒药：奈玛特韦/利托那韦、瑞德西韦、阿兹夫定等；免疫调节：糖皮质激素、托珠单抗等；支持治疗'
+            },
+            {
+                id: 29,
+                class: '乙类',
+                name: '人感染H7N9禽流感',
+                pathogen: 'H7N9禽流感病毒',
+                route: '接触染疫禽类或其环境，有限人际传播',
+                symptoms: '高热、咳嗽，迅速进展为重症肺炎、急性呼吸窘迫综合征、多器官衰竭',
+                treatment: '早期应用神经氨酸酶抑制剂：奥司他韦、帕拉米韦、扎那米韦'
+            },
+
+            // 丙类传染病 (11种)
+            {
+                id: 30,
+                class: '丙类',
+                name: '流行性感冒',
+                pathogen: '流感病毒（甲、乙、丙型）',
+                route: '飞沫、接触',
+                symptoms: '急起高热、头痛、肌痛、乏力等全身症状重，呼吸道症状相对较轻',
+                treatment: '神经氨酸酶抑制剂：奥司他韦、扎那米韦、帕拉米韦（发病48小时内使用）'
+            },
+            {
+                id: 31,
+                class: '丙类',
+                name: '流行性腮腺炎',
+                pathogen: '腮腺炎病毒',
+                route: '飞沫传播',
+                symptoms: '腮腺非化脓性肿痛，以耳垂为中心，有弹性感。可伴发热。并发症有脑膜炎、睾丸炎/卵巢炎、胰腺炎',
+                treatment: '无特效抗病毒药。对症支持治疗。预防（麻腮风疫苗）'
+            },
+            {
+                id: 32,
+                class: '丙类',
+                name: '风疹',
+                pathogen: '风疹病毒',
+                route: '飞沫传播',
+                symptoms: '发热、红色斑丘疹（出疹快、消退快）、耳后及枕部淋巴结肿大。孕妇感染可致胎儿先天性风疹综合征',
+                treatment: '无特效抗病毒药。对症治疗。预防（麻腮风疫苗）'
+            },
+            {
+                id: 33,
+                class: '丙类',
+                name: '急性出血性结膜炎',
+                pathogen: '肠道病毒70型、柯萨奇病毒A24型',
+                route: '接触传播（眼-手-眼）',
+                symptoms: '眼睑红肿、结膜高度充血、畏光、流泪、眼部分泌物多。眼部刺激症状重',
+                treatment: '无特效抗病毒眼药水。常用抗病毒/抗生素滴眼液预防继发感染。强调隔离、个人卫生'
+            },
+            {
+                id: 34,
+                class: '丙类',
+                name: '麻风病',
+                pathogen: '麻风分枝杆菌',
+                route: '长期密切接触（呼吸道、破损皮肤）',
+                symptoms: '皮肤损害（斑疹、丘疹、结节）伴感觉障碍。周围神经粗大。晚期可致面部畸形、肢端残废',
+                treatment: '联合化疗：世界卫生组织推荐方案，包含氨苯砜、利福平、氯法齐明等。需长期规范治疗'
+            },
+            {
+                id: 35,
+                class: '丙类',
+                name: '流行性和地方性斑疹伤寒',
+                pathogen: '流行性：普氏立克次体（人虱传播）；地方性：莫氏立克次体（鼠蚤传播）',
+                route: '媒介昆虫（虱、蚤）叮咬或其粪便污染破损皮肤',
+                symptoms: '发热、剧烈头痛、皮疹（斑丘疹或出血疹）、中枢神经系统症状',
+                treatment: '特效抗生素：多西环素为首选。四环素、氯霉素也有效'
+            },
+            {
+                id: 36,
+                class: '丙类',
+                name: '黑热病',
+                pathogen: '杜氏利什曼原虫',
+                route: '白蛉叮咬',
+                symptoms: '长期不规则发热、肝脾进行性肿大（脾大尤为显著）、全血细胞减少、皮肤色素沉着',
+                treatment: '特效驱虫药：葡萄糖酸锑钠为首选。两性霉素B、喷他脒等用于耐药或难治病例'
+            },
+            {
+                id: 37,
+                class: '丙类',
+                name: '包虫病',
+                pathogen: '棘球绦虫幼虫（细粒/多房棘球蚴）',
+                route: '误食被虫卵污染的食物、水，或接触病犬',
+                symptoms: '生长缓慢，形成占位性囊肿（肝、肺常见）。压迫症状、过敏反应（如囊液破裂）',
+                treatment: '手术是根治的主要方法。药物治疗：阿苯达唑用于不能手术或术后辅助治疗'
+            },
+            {
+                id: 38,
+                class: '丙类',
+                name: '丝虫病',
+                pathogen: '班氏/马来丝虫（淋巴丝虫）',
+                route: '蚊媒传播',
+                symptoms: '急性期：淋巴管炎、淋巴结炎、丹毒样皮炎；慢性期：象皮肿、乳糜尿、鞘膜积液',
+                treatment: '特效驱虫药：乙胺嗪（海群生）。已基本消除，重点是监测和慢性病患管理'
+            },
+            {
+                id: 39,
+                class: '丙类',
+                name: '其他感染性腹泻病',
+                pathogen: '多种病原（诺如病毒、轮状病毒、致泻性大肠杆菌等）',
+                route: '粪-口途径',
+                symptoms: '腹泻（水样便、粘液脓血便等），可伴呕吐、腹痛、发热',
+                treatment: '对症支持治疗，核心是口服补液盐防止脱水。病毒性无特效药。细菌性根据药敏选用抗生素'
+            },
+            {
+                id: 40,
+                class: '丙类',
+                name: '手足口病',
+                pathogen: '肠道病毒（柯萨奇A16、EV71等）',
+                route: '粪-口、呼吸道飞沫、接触疱疹液',
+                symptoms: '手、足、口、臀部出现斑丘疹、疱疹，可伴发热。少数（尤其是EV71感染）可并发脑炎、肺水肿、循环障碍',
+                treatment: '无特效抗病毒药。对症支持。重症识别与早期干预是关键（控制颅内压、呼吸循环支持）'
+            }
+        ];
+
+        // 页面加载时渲染表格
+        document.addEventListener('DOMContentLoaded', function() {
+            renderDiseasesTable();
+        });
+
+        // 渲染表格函数
+        function renderDiseasesTable() {
+            const tableA = document.getElementById('disease-a');
+            const tableB = document.getElementById('disease-b');
+            const tableC = document.getElementById('disease-c');
+            
+            tableA.innerHTML = '';
+            tableB.innerHTML = '';
+            tableC.innerHTML = '';
+            
+            diseasesData.forEach(disease => {
+                const row = document.createElement('tr');
+                
+                // 根据类别添加不同的样式
+                let classTag = '';
+                if (disease.class === '甲类') {
+                    classTag = '<span class="class-tag class-a">甲类</span>';
+                } else if (disease.class === '乙类') {
+                    classTag = '<span class="class-tag class-b">乙类</span>';
+                } else {
+                    classTag = '<span class="class-tag class-c">丙类</span>';
+                }
+                
+                row.innerHTML = `
+                    <td>${disease.id}</td>
+                    <td>${classTag}</td>
+                    <td><strong>${disease.name}</strong></td>
+                    <td>${disease.pathogen}</td>
+                    <td>${disease.route}</td>
+                    <td>${disease.symptoms}</td>
+                    <td>${disease.treatment}</td>
+                `;
+                
+                // 根据类别添加到不同的表格
+                if (disease.class === '甲类') {
+                    tableA.appendChild(row);
+                } else if (disease.class === '乙类') {
+                    tableB.appendChild(row);
+                } else {
+                    tableC.appendChild(row);
+                }
+            });
+        }
+
+        // 筛选功能
+        function filterDiseases(className) {
+            const allRows = document.querySelectorAll('.disease-table tbody tr');
+            allRows.forEach(row => {
+                if (className === 'all') {
+                    row.style.display = '';
+                } else {
+                    const rowClass = row.querySelector('.class-tag').textContent;
+                    row.style.display = rowClass === className ? '' : 'none';
+                }
+            });
+            
+            // 滚动到第一个可见的表格
+            const firstVisibleSection = document.querySelector('.disease-section:not([style*="display: none"])');
+            if (firstVisibleSection) {
+                firstVisibleSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 搜索功能
+        function searchDiseases(keyword) {
+            const allRows = document.querySelectorAll('.disease-table tbody tr');
+            const lowKeyword = keyword.toLowerCase().trim();
+            
+            if (lowKeyword === '') {
+                allRows.forEach(row => row.style.display = '');
+                return;
+            }
+            
+            allRows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(lowKeyword) ? '' : 'none';
+            });
+            
+            // 高亮显示匹配的关键词
+            allRows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                cells.forEach(cell => {
+                    const originalHTML = cell.innerHTML;
+                    const regex = new RegExp(`(${keyword})`, 'gi');
+                    cell.innerHTML = originalHTML.replace(regex, '<mark>$1</mark>');
+                });
+            });
+        }
+
+        // 重置视图
+        function resetView() {
+            document.querySelector('.filter').value = 'all';
+            document.querySelector('.search').value = '';
+            filterDiseases('all');
+            
+            // 移除高亮标记
+            document.querySelectorAll('mark').forEach(mark => {
+                const parent = mark.parentNode;
+                parent.innerHTML = parent.innerHTML.replace(/<mark>|<\/mark>/g, '');
+            });
+            
+            // 滚动到顶部
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 导出PDF功能
+        function exportToPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const title = "法定传染病核心信息速查手册（完整版）";
+            
+            // 设置字体和标题
+            doc.setFontSize(20);
+            doc.text(title, 105, 20, { align: 'center' });
+            
+            doc.setFontSize(11);
+            doc.text("版本：2024年 | 依据：《中华人民共和国传染病防治法》", 105, 28, { align: 'center' });
+            
+            // 添加重要说明
+            const warningText = "重要说明：本手册为传染病监测工作参考摘要，信息基于当前医学知识。实际工作中，请务必以国家卫健委发布的最新版《传染病诊断标准》、《防治指南》和《监测方案》为准。治疗方案需由临床医生根据患者具体情况制定。";
+            const splitWarning = doc.splitTextToSize(warningText, 180);
+            doc.text(splitWarning, 15, 40);
+            
+            // 使用html2canvas捕获页面内容
+            const element = document.querySelector('.container');
+            const yOffset = 60; // 给之前的标题和说明留出空间
+            
+            html2canvas(element, { 
+                scale: 0.7,
+                useCORS: true,
+                logging: false
+            }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const imgWidth = 190;
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                
+                // 计算PDF页面高度
+                const pageHeight = doc.internal.pageSize.height;
+                let position = yOffset;
+                
+                // 如果图片高度超过一页，分页显示
+                if (position + imgHeight > pageHeight) {
+                    // 第一页
+                    const firstPageHeight = pageHeight - position - 20;
+                    const firstPageWidth = imgWidth * firstPageHeight / imgHeight;
+                    
+                    doc.addImage(imgData, 'PNG', 10, position, firstPageWidth, firstPageHeight);
+                    
+                    // 添加新页
+                    doc.addPage();
+                    position = 10;
+                    
+                    // 第二页
+                    const remainingHeight = imgHeight - firstPageHeight;
+                    if (remainingHeight > 0) {
+                        doc.addImage(imgData, 'PNG', 10, position, imgWidth, remainingHeight, 
+                                    null, null, 0, firstPageHeight);
+                    }
+                } else {
+                    doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+                }
+                
+                // 保存PDF
+                doc.save('法定传染病信息手册_完整版.pdf');
+            });
+        }
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
